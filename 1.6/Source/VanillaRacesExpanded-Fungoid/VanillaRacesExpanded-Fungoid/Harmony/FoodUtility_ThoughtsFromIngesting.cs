@@ -15,22 +15,6 @@ namespace VanillaRacesExpandedFungoid
 {
 
     [HarmonyPatch(typeof(FoodUtility))]
-    [HarmonyPatch("ThoughtsFromIngesting")]
-    public static class VanillaRacesExpandedFungoid_FoodUtility_ThoughtsFromIngesting_Patch
-    {
-
-        [HarmonyPostfix]
-        public static void AddPorkThought(Pawn ingester, Thing foodSource, ThingDef foodDef)
-        {
-            if (foodDef.IsFungus && ingester.genes?.HasActiveGene(InternalDefOf.VRE_FungalFlesh) == true)
-            {
-                ingester.mindState.lastHumanMeatIngestedTick = Find.TickManager.TicksGame;
-                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(HistoryEventDefOf.AteHumanMeat, ingester.Named(HistoryEventArgsNames.Doer)), canApplySelfTookThoughts: true);
-            }
-        }
-    }
-
-    [HarmonyPatch(typeof(FoodUtility))]
     [HarmonyPatch("AddThoughtsFromIdeo")]
     public static class VanillaRacesExpandedFungoid_FoodUtility_AddThoughtsFromIdeo_Patch
     {

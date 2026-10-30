@@ -311,6 +311,7 @@
     <Compile Include="Harmony\SocialInteractionUtility_IsGoodPositionForInteraction.cs" />
     <Compile Include="Harmony\InteractionWorker_Interacted.cs" />
     <Compile Include="Harmony\MentalStateHandler_TryStartMentalState.cs" />
+    <Compile Include="Harmony\Thing_Ingested.cs" />
     <Compile Include="HediffComps\HediffComp_GeneInfection.cs" />
     <Compile Include="HediffComps\HediffComp_StageByFungalDays.cs" />
     <Compile Include="HediffComps\Properties\HediffCompProperties_GeneInfection.cs" />
